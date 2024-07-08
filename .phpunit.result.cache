@@ -1,0 +1,1 @@
+{"version":1,"defects":{"SymbolSdk\\Symbol\\Models\\MosaicIdTest::testGenerateMosaicId":8,"SymbolSdk\\Symbol\\Models\\AddressTest::testAddress":7},"times":{"SymbolSdk\\Symbol\\Models\\MosaicIdTest::testGenerateMosaicId":0.559,"SymbolSdk\\Symbol\\Models\\AddressTest::testAddress":0.351}}
