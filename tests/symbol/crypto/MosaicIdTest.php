@@ -5,15 +5,15 @@ namespace SymbolSdk\Symbol\Models;
 use SymbolSdk\Symbol\IdGenerator;
 use SymbolSdk\Symbol\Address;
 use PHPUnit\Framework\TestCase;
+use SymbolSdk\Utils\Converter;
 
 class MosaicIdTest extends TestCase
 {
   static function idTohex($id)
   {
     $mosaicId = new UnresolvedMosaicId($id['id']);
-    $hex = strtoupper(gmp_strval(gmp_init($mosaicId->value, 10), 16));
-    $paddedHex = str_pad($hex, 16, '0', STR_PAD_LEFT);
-    return $paddedHex;
+    $hex = substr($mosaicId->__toString(), 2);
+    return $hex;
   }
 
   public function testGenerateMosaicId()
