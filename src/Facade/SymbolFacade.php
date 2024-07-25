@@ -186,7 +186,7 @@ class SymbolFacade
 		$transactionHash = $this->hashTransaction($transaction);
 		$initializeCosignature = function (Models\Cosignature &$cosignature) use ($keyPair, $transactionHash) {
 			$cosignature->version = 0;
-			$cosignature->signerPublicKey = $keyPair->publicKey();
+			$cosignature->signerPublicKey = new Models\PublicKey($keyPair->publicKey()->binaryData);
 			$cosignature->signature = new Models\Signature($keyPair->sign($transactionHash->binaryData));
 		};
 
